@@ -9,7 +9,8 @@ I have tons of movies in my watch list and I pick one every weekend, I try to wa
 
 1. Install required modules npm Install
 2. Create a movie.js and add your movies imdb id
-`var moviesId = [
+
+var moviesId = [
 'tt123456',
 'tt234567',
 'tt345678',
@@ -20,7 +21,7 @@ function getMovies()
   return moviesId;
 }
 
-module.exports.getMovies = getMovies();`
+module.exports.getMovies = getMovies();
 
 3. npm start
 4. Go to your localhost:8000/movies to see your watch list

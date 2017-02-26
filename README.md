@@ -21,6 +21,6 @@ function getMovies()
 }
 
 module.exports.getMovies = getMovies();`
-`
+
 3. npm start
 4. Go to your localhost:8000/movies to see your watch list

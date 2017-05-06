@@ -7,8 +7,8 @@ router.get('/movies', function(req, res, next) {
 
   var imageUrl = [];
   var imageCount = 0;
-  var promise = new Promise(function(resolve, reject) {
     movies.getMovies.forEach(function(movieId){
+    var promise = new Promise(function(resolve, reject) {
       http.get("http://omdbapi.com?i=" + movieId + "&plot=full&r=json", (res) => {
         imageCount++;
         let data = '';
@@ -28,11 +28,13 @@ router.get('/movies', function(req, res, next) {
       });
     })
 
+    promise.then((imageUrl) => {
+      res.render('movies', { imageUrl: imageUrl });
+    });
+
   });
 
-  promise.then((imageUrl) => {
-    res.render('movies', { imageUrl: imageUrl });
-  });
+
 
 });
 
